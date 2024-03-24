@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import { buttonVariants } from './ui/button';
 import { Icons } from './icons';
 import { MainNav } from './main-nav';
+import { MobileNav } from './mobile-nav';
 
 export const SiteHeader = () => {
   return (
@@ -14,23 +15,39 @@ export const SiteHeader = () => {
         <div className='flex flex-1 items-center justify-end space-x-2'>
           <nav className='flex items-center'>
             <Link href={siteConfig.links.linkedin} target='_blank' rel='noreferrer'>
-              <div className={cn(buttonVariants({ variant: 'ghost' }), 'w-10 px-0')}>
+              <div
+                className={cn(
+                  buttonVariants({ variant: 'ghost' }),
+                  'hidden w-10 px-0 sm:inline-flex'
+                )}
+              >
                 <Icons.linkedin className='h-5 w-5' />
                 <span className='sr-only'>LinkedIn</span>
               </div>
             </Link>
             <Link href={siteConfig.links.github} target='_blank' rel='noreferrer'>
-              <div className={cn(buttonVariants({ variant: 'ghost' }), 'w-10 px-0')}>
+              <div
+                className={cn(
+                  buttonVariants({ variant: 'ghost' }),
+                  'hidden w-10 px-0 sm:inline-flex'
+                )}
+              >
                 <Icons.gitHub className='h-5 w-5' />
                 <span className='sr-only'>Github</span>
               </div>
             </Link>
             <Link href={siteConfig.links.personalSite} target='_blank' rel='noreferrer'>
-              <div className={cn(buttonVariants({ variant: 'ghost' }), 'w-10 px-0')}>
+              <div
+                className={cn(
+                  buttonVariants({ variant: 'ghost' }),
+                  'hidden w-10 px-0 sm:inline-flex'
+                )}
+              >
                 <Icons.personalSite className='h-5 w-5' />
                 <span className='sr-only'>Web Personal</span>
               </div>
             </Link>
+            <MobileNav />
           </nav>
         </div>
       </div>

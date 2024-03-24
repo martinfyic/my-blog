@@ -26,7 +26,7 @@ export const MainNav = () => {
           key={link.href}
           href={link.href}
           className={cn(
-            'text-sm font-semibold transition-colors hover:text-primary',
+            'hidden text-sm font-semibold transition-colors hover:text-primary sm:inline-block',
             pathname === link.href ? 'text-foreground' : 'text-foreground/60'
           )}
         >
