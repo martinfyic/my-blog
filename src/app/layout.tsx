@@ -4,9 +4,10 @@ import type { Metadata } from 'next';
 import { roboto } from '@/config/fonts';
 import { cn } from '@/lib/utils';
 import { SiteHeader } from '@/components/site-header';
+import { siteConfig } from '@/config/site';
+import { Providers } from '@/components/providers';
 
 import './globals.css';
-import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
   title: {
@@ -34,10 +35,12 @@ export default function RootLayout({
           roboto.variable
         )}
       >
-        <div className='min-h-dvh relative flex flex-col bg-background'>
-          <SiteHeader />
-          <main className='flex-1'>{children}</main>
-        </div>
+        <Providers>
+          <div className='min-h-dvh relative flex flex-col bg-background'>
+            <SiteHeader />
+            <main className='flex-1'>{children}</main>
+          </div>
+        </Providers>
       </body>
     </html>
   );
