@@ -1,9 +1,27 @@
 import { posts } from '#site/content';
 import { PostItem } from '@/components/post-item';
+import { QueryPagination } from '@/components/query-pagination';
 import { sortPost } from '@/lib/utils';
 
-export default async function BlogPage() {
+const POST_PER_PAGE = 2;
+
+interface BlogPageProps {
+  searchParams: {
+    page?: string;
+  };
+}
+
+export default async function BlogPage({ searchParams }: BlogPageProps) {
+  const currentPage = Number(searchParams?.page) || 1;
+
   const sortedPosts = sortPost(posts.filter((post) => post.published));
+
+  const totalPages = Math.ceil(sortedPosts.length / POST_PER_PAGE);
+
+  const displayPost = sortedPosts.slice(
+    (currentPage - 1) * POST_PER_PAGE,
+    currentPage * POST_PER_PAGE
+  );
 
   return (
     <div className='container max-w-4xl py-6 lg:py-10'>
@@ -16,9 +34,9 @@ export default async function BlogPage() {
         </div>
       </div>
       <hr className='mt-8' />
-      {sortedPosts?.length > 0 ? (
+      {displayPost?.length > 0 ? (
         <ul className='flex flex-col'>
-          {sortedPosts.map((post) => {
+          {displayPost.map((post) => {
             const { date, slug, title, description } = post;
             return (
               <li key={slug}>
@@ -35,6 +53,10 @@ export default async function BlogPage() {
       ) : (
         <p>Aún no hay blogs</p>
       )}
+      <QueryPagination
+        totalPages={totalPages}
+        className='mt-6 items-center justify-center md:mt-10 lg:mt-12'
+      />
     </div>
   );
 }
