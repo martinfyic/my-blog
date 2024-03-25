@@ -2,7 +2,7 @@ import { posts } from '#site/content';
 import { PostItem } from '@/components/post-item';
 import { sortPost } from '@/lib/utils';
 
-export default async function BlogsPage() {
+export default async function BlogPage() {
   const sortedPosts = sortPost(posts.filter((post) => post.published));
 
   return (
