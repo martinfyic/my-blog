@@ -1,4 +1,7 @@
 import { defineConfig, defineCollection, s } from 'velite';
+import rehypeSlug from 'rehype-slug';
+import rehypePrettyCode from 'rehype-pretty-code';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
 // ejemplo de computedFields, /blogs/my-slug-del-blog ==> my-slug-del-blog
 // esto agregara el campo slugAsParams a cada post, que seria my-slug-del-blog
@@ -33,7 +36,17 @@ export default defineConfig({
   },
   collections: { posts },
   mdx: {
-    rehypePlugins: [],
+    rehypePlugins: [
+      rehypeSlug,
+      [rehypePrettyCode, { theme: 'one-dark-pro' }],
+      [
+        rehypeAutolinkHeadings,
+        {
+          behavior: 'wrap',
+          properties: { className: ['subheading-anchor'], ariaLabel: 'Link to section' },
+        },
+      ],
+    ],
     remarkPlugins: [],
   },
 });

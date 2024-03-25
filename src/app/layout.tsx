@@ -7,7 +7,7 @@ import { SiteHeader } from '@/components/site-header';
 import { siteConfig } from '@/config/site';
 import { Providers } from '@/components/providers';
 
-import './globals.css';
+import '@/styles/globals.css';
 
 export const metadata: Metadata = {
   title: {
@@ -28,7 +28,7 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang='es'>
+    <html lang='es' className='scroll-pt-[3.5rem] scroll-smooth'>
       <body
         className={cn(
           'min-h-screen bg-background font-sans antialiased',
