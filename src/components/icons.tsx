@@ -29,7 +29,7 @@ export const Icons = {
   ),
   linkedin: (props: IconProps) => (
     <svg
-      fill='#000000'
+      fill='currentColor'
       height='200px'
       width='200px'
       viewBox='-143 145 512 512'
@@ -44,7 +44,7 @@ export const Icons = {
     </svg>
   ),
   personalSite: (props: IconProps) => (
-    <svg {...props} viewBox='0 0 32 32' fill='#000000'>
+    <svg {...props} viewBox='0 0 32 32' fill='currentColor'>
       <g id='SVGRepo_bgCarrier'></g>
       <g id='SVGRepo_tracerCarrier' strokeLinecap='round' strokeLinejoin='round'></g>
       <g id='SVGRepo_iconCarrier'>
