@@ -1,34 +1,64 @@
-import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+
+import { Icons } from '@/components/icons';
+import { buttonVariants } from '@/components/ui/button';
+import { siteConfig } from '@/config/site';
+import { cn, sortPost } from '@/lib/utils';
+import { posts } from '#site/content';
+import { PostItem } from '@/components/post-item';
 
 export default function HomeBlog() {
+  const latestPosts = sortPost(posts).slice(0, 3);
   return (
-    <main className='flex min-h-screen flex-col items-center justify-center p-24'>
-      <h1 className='text-7xl font-bold'>Hello world!</h1>
-      <h2 className='my-5 text-4xl font-bold'>Blog</h2>
-      <p className='text-balance my-2 mt-4 max-w-5xl text-center text-lg'>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, quasi tenetur.
-        Facilis consequatur quam vero corporis fugit maiores nulla voluptas illum, harum
-        quisquam porro tempora, ullam cupiditate. Consequatur quisquam dignissimos
-        exercitationem facere quia quaerat, ab adipisci maiores deleniti veritatis quae,
-        praesentium culpa cupiditate dolorem libero molestiae odit molestias odio tenetur
-      </p>
-      <p className='text-balance mt-4 max-w-5xl text-center'>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, quasi tenetur.
-        Facilis consequatur quam vero corporis fugit maiores nulla voluptas illum, harum
-        quisquam porro tempora, ullam cupiditate. Consequatur quisquam dignissimos
-        exercitationem facere quia quaerat, ab adipisci maiores deleniti veritatis quae,
-        praesentium culpa cupiditate dolorem libero molestiae odit molestias odio tenetur
-        numquam perferendis sint aliquam ipsam asperiores? Quia repellat maiores ut,
-        accusantium quam illum fugit culpa quisquam! Cumque quam eos nostrum quaerat atque
-        aspernatur dolore voluptate odio, nulla exercitationem illum, dolorum perferendis
-        in iste enim id debitis sint, reiciendis distinctio modi non. Dolore earum
-        suscipit cumque libero, quod distinctio cupiditate numquam repellat fugiat vitae
-        ipsa harum, possimus dolores id aperiam? Labore ex adipisci deleniti aut itaque
-        iusto quisquam, totam dolorum nisi.
-      </p>
-      <Button variant='default' className='mt-5'>
-        Click me
-      </Button>
-    </main>
+    <>
+      <section className='space-y-6 pb-8 pt-6 md:mt-10 md:pb-12 lg:py-32'>
+        <div className='container flex flex-col gap-4 text-center'>
+          <h1 className='text-3xl font-black sm:text-5xl md:text-6xl lg:text-7xl'>
+            Hola! Soy Martín
+          </h1>
+          <p className='text-balance mx-auto max-w-[42rem] text-muted-foreground sm:text-xl'>
+            Bienvenido a mi blog, creado con tailwind, shadcn, velite y Next.js 14. Aquí
+            encontrarás artículos sobre desarrollo web y tecnologías 🚀.
+          </p>
+          <div className='flex flex-col justify-center gap-4 sm:flex-row'>
+            <Link
+              href='/blog'
+              className={cn(buttonVariants({ size: 'lg' }), 'w-full sm:w-fit')}
+            >
+              Ir al blog
+            </Link>
+            <Link
+              href={siteConfig.links.github}
+              target='_blank'
+              rel='noopener noreferrer'
+              className={cn(
+                buttonVariants({ variant: 'outline', size: 'lg' }),
+                'flex w-full flex-row gap-2 sm:w-fit'
+              )}
+            >
+              GitHub
+              <Icons.gitHub className='h-5 w-5' />
+            </Link>
+          </div>
+        </div>
+      </section>
+      <section className='container mt-60 flex max-w-4xl flex-col space-y-6 py-6 lg:py-10'>
+        <h2 className='md:6xl lg:7xl text-center text-3xl font-semibold sm:text-5xl'>
+          Últimos artículos
+        </h2>
+        <ul className='flex flex-col'>
+          {latestPosts.map((post) => (
+            <li key={post.slug} className='first:border-t first:border-border'>
+              <PostItem
+                date={post.date}
+                slug={post.slug}
+                title={post.title}
+                description={post.description}
+              />
+            </li>
+          ))}
+        </ul>
+      </section>
+    </>
   );
 }
