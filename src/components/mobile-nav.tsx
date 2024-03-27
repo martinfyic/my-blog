@@ -30,8 +30,8 @@ export const MobileNav = () => {
           <MobileLink href='/blog' onOpenChange={setOpen}>
             Blog
           </MobileLink>
-          <MobileLink href='/about' onOpenChange={setOpen}>
-            About
+          <MobileLink href='/sobre-mi' onOpenChange={setOpen}>
+            Sobre mi
           </MobileLink>
           <hr className='my-6' />
           <div className='flex flex-row items-center justify-around'>
