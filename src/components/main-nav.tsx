@@ -9,7 +9,7 @@ import { usePathname } from 'next/navigation';
 
 const navLinks = [
   { href: '/blog', label: 'Blog' },
-  { href: '/about', label: 'About' },
+  { href: '/sobre-mi', label: 'Sobre mi' },
 ];
 
 export const MainNav = () => {

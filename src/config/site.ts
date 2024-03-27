@@ -1,5 +1,5 @@
 export const siteConfig = {
-  author: 'Martin Ferreira',
+  author: 'Martín Ferreira',
   description:
     'Este es un blog personal, el cual ire volcando mi experiencia a los retos enfrentados en este proceso de aprendizaje del desarrollo web, el mismo esta creado con Next.js 14, typescript, tailwindcss, shadcn, velite',
   keywords: [
@@ -41,7 +41,7 @@ export const siteConfig = {
     github: 'https://github.com/martinfyic',
     personalSite: 'https://www.martin-ferreira.com/',
   },
-  name: 'Blog Martin Ferreira',
+  name: 'CodeZen',
   url: 'https://example.com',
 };
 
