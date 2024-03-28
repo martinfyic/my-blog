@@ -4,19 +4,21 @@ type IconProps = HTMLAttributes<SVGElement>;
 
 export const Icons = {
   logo: (props: IconProps) => (
-    <svg
-      xmlns='http://www.w3.org/2000/svg'
-      viewBox='0 0 24 24'
-      fill='none'
-      stroke='currentColor'
-      strokeWidth='2'
-      strokeLinecap='round'
-      strokeLinejoin='round'
-      {...props}
-    >
-      <path d='M4 11a9 9 0 0 1 9 9' />
-      <path d='M4 4a16 16 0 0 1 16 16' />
-      <circle cx='5' cy='19' r='1' />
+    <svg {...props} fill='currentColor' viewBox='0 0 24 24'>
+      <g id='SVGRepo_bgCarrier' strokeWidth='0'></g>
+      <g id='SVGRepo_tracerCarrier' strokeLinecap='round' strokeLinejoin='round'></g>
+      <g id='SVGRepo_iconCarrier'>
+        <path
+          id='secondary'
+          d='M16.5,14a4.06,4.06,0,0,1-2.92-1.25,2,2,0,0,0-3.17,0,4,4,0,0,1-5.83,0A2.1,2.1,0,0,0,3,12a1,1,0,0,1,0-2,4,4,0,0,1,2.91,1.25,2,2,0,0,0,3.17,0,4,4,0,0,1,5.83,0,2,2,0,0,0,3.17,0A4.06,4.06,0,0,1,21,10a1,1,0,0,1,0,2,2.12,2.12,0,0,0-1.59.75A4,4,0,0,1,16.5,14Z'
+          style={{ fill: '#2ca9bc;' }}
+        ></path>
+        <path
+          id='primary'
+          d='M16.5,8a4.06,4.06,0,0,1-2.92-1.25,2,2,0,0,0-3.17,0,4,4,0,0,1-5.83,0A2.1,2.1,0,0,0,3,6,1,1,0,0,1,3,4,4,4,0,0,1,5.91,5.25a2,2,0,0,0,3.17,0,4,4,0,0,1,5.83,0,2,2,0,0,0,3.17,0A4.06,4.06,0,0,1,21,4a1,1,0,0,1,0,2,2.12,2.12,0,0,0-1.59.75A4,4,0,0,1,16.5,8Zm2.91,10.75A2.12,2.12,0,0,1,21,18a1,1,0,0,0,0-2,4.06,4.06,0,0,0-2.92,1.25,2,2,0,0,1-3.17,0,4,4,0,0,0-5.83,0,2,2,0,0,1-3.17,0A4,4,0,0,0,3,16a1,1,0,0,0,0,2,2.1,2.1,0,0,1,1.58.75,4,4,0,0,0,5.83,0,2,2,0,0,1,3.17,0,4,4,0,0,0,5.83,0Z'
+          style={{ fill: 'currentColor' }}
+        ></path>
+      </g>
     </svg>
   ),
   gitHub: (props: IconProps) => (
