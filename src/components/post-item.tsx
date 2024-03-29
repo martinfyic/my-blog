@@ -3,15 +3,17 @@ import Link from 'next/link';
 import { Calendar } from 'lucide-react';
 import { cn, formatDate } from '@/lib/utils';
 import { buttonVariants } from './ui/button';
+import { Tag } from './tags';
 
 interface PostItemProps {
   date: string;
   description?: string;
   slug: string;
   title: string;
+  tags?: string[];
 }
 
-export const PostItem = ({ date, slug, title, description }: PostItemProps) => {
+export const PostItem = ({ date, slug, title, description, tags }: PostItemProps) => {
   return (
     <article className='flex flex-col gap-2 border-b border-border py-3'>
       <div className=''>
@@ -19,6 +21,7 @@ export const PostItem = ({ date, slug, title, description }: PostItemProps) => {
           <Link href={slug}>{title}</Link>
         </h2>
       </div>
+      <div className='flex gap-2'>{tags?.map((tag) => <Tag key={tag} tag={tag} />)}</div>
       <div className='max-w-none text-muted-foreground'>{description}</div>
       <div className='flex items-center justify-between'>
         <dl>

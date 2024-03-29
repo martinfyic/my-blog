@@ -21,8 +21,13 @@ export const SiteFooter = () => {
           </a>
         </div>
         <div className='mb-2 flex space-x-2 text-sm text-muted-foreground'>
-          <a href={siteConfig.links.personalSite} target='_blank' rel='noreferrer'>
-            {siteConfig.author} 👨🏻‍💻
+          <a
+            href={siteConfig.links.personalSite}
+            target='_blank'
+            rel='noreferrer'
+            className='transition-all duration-300 hover:text-slate-200 hover:underline'
+          >
+            {siteConfig.author}
           </a>
         </div>
       </div>

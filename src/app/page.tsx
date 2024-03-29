@@ -16,7 +16,7 @@ export default function HomeBlog() {
           <h1 className='text-3xl font-black sm:text-5xl md:text-6xl lg:text-7xl'>
             Hola! Soy Martín
           </h1>
-          <p className='text-balance mx-auto max-w-[42rem] text-muted-foreground sm:text-xl'>
+          <p className='mx-auto max-w-[42rem] text-balance text-muted-foreground sm:text-xl'>
             Bienvenido a mi blog, creado con tailwind, shadcn, velite y Next.js 14. Aquí
             encontrarás artículos sobre desarrollo web y tecnologías 🚀.
           </p>
@@ -43,7 +43,7 @@ export default function HomeBlog() {
         </div>
       </section>
       <section className='container mt-60 flex max-w-4xl flex-col space-y-6 py-6 lg:py-10'>
-        <h2 className='md:6xl lg:7xl text-center text-3xl font-semibold sm:text-5xl'>
+        <h2 className='text-center text-3xl font-semibold sm:text-4xl md:text-5xl lg:text-6xl'>
           Últimos artículos
         </h2>
         <ul className='flex flex-col'>
@@ -54,6 +54,7 @@ export default function HomeBlog() {
                 slug={post.slug}
                 title={post.title}
                 description={post.description}
+                tags={post.tags}
               />
             </li>
           ))}
