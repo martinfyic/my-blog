@@ -4,7 +4,8 @@ import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
   title: 'Sobre mí',
-  description: 'En esta página encontraras información sobre mí',
+  description:
+    'En este espacio, compartiré mis experiencias como programador full stack, explorando los desafíos que he enfrentado y las soluciones que he descubierto a lo largo de mi trayecto. Mi objetivo es no solo documentar mi propio crecimiento, sino también ofrecer insights y consejos que puedan ser útiles para otros desarrolladores que estén en mi misma situación.',
 };
 
 export default async function AboutPage() {
@@ -29,17 +30,31 @@ export default async function AboutPage() {
             Programador Full Stack
           </p>
         </div>
-        <p className='py-4 text-lg text-muted-foreground'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus explicabo
-          recusandae sunt veritatis harum fugiat enim minima, culpa dolor nisi porro
-          quaerat iure, dolorum non earum animi, doloremque aliquam perspiciatis
-          dignissimos magni numquam aspernatur totam aliquid. Placeat delectus, alias
-          harum accusamus pariatur amet laboriosam, magnam tenetur sequi consequatur
-          soluta incidunt inventore iusto quo consectetur libero nam, dolorum impedit
-          quaerat! Impedit asperiores sunt iusto ipsum corporis dolor maiores nam optio,
-          veniam quod molestias, quidem libero voluptatibus at sit ut fugit, pariatur
-          repellat veritatis. Amet, quis aliquam ipsam eveniet odio.
-        </p>
+        <div className='flex flex-col text-center sm:text-start'>
+          <p className='text-balance py-4 text-lg'>
+            ¡Hola! Soy Martín Ferreira, originario de Montevideo, Uruguay. CodeZen es más
+            que un blog, es mi viaje personal en el mundo del desarrollo web, donde
+            transformo mis desafíos en oportunidades de aprendizaje.
+          </p>
+          <p className='text-balance py-4 text-lg'>
+            En este espacio, compartiré mis experiencias como programador full stack,
+            explorando los desafíos que he enfrentado y las soluciones que he descubierto
+            a lo largo de mi trayecto. Mi objetivo es no solo documentar mi propio
+            crecimiento, sino también ofrecer insights y consejos que puedan ser útiles
+            para otros desarrolladores que estén en mi misma situación.
+          </p>
+          <p className='text-balance py-4 text-lg'>
+            Con cada artículo, te invito a sumergirte en un nuevo tema, explorando desde
+            técnicas de codificación hasta conceptos avanzados de desarrollo web. CodeZen
+            es un espacio de aprendizaje continuo, donde la pasión por el código se
+            encuentra con el deseo de compartir conocimientos y fomentar el crecimiento
+            personal y profesional.
+          </p>
+          <p className='text-balance py-4 text-lg'>
+            ¡Bienvenido a CodeZen, donde el conocimiento se encuentra en armonía con la
+            codificación!
+          </p>
+        </div>
       </div>
     </div>
   );

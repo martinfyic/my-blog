@@ -25,9 +25,9 @@ export const SiteFooter = () => {
             href={siteConfig.links.personalSite}
             target='_blank'
             rel='noreferrer'
-            className='transition-all duration-300 hover:text-slate-200 hover:underline'
+            className='transition-all duration-300 hover:text-slate-900 hover:underline dark:hover:text-slate-200'
           >
-            {siteConfig.author}
+            Creado por {siteConfig.author} {new Date().getFullYear()}
           </a>
         </div>
       </div>

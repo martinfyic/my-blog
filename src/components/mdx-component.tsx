@@ -1,6 +1,7 @@
 import * as runtime from 'react/jsx-runtime';
 import Image from 'next/image';
 import { Callout } from './callout';
+import { Iframe } from './iframe';
 
 const useMDXComponent = (code: string) => {
   const fn = new Function(code);
@@ -10,6 +11,7 @@ const useMDXComponent = (code: string) => {
 const component = {
   Image,
   Callout,
+  Iframe,
 };
 
 interface MdxProps {
