@@ -32,9 +32,10 @@ export default async function AboutPage() {
         </div>
         <div className='flex flex-col text-center sm:text-start'>
           <p className='text-balance py-4 text-lg'>
-            ¡Hola! Soy Martín Ferreira, originario de Montevideo, Uruguay. CodeZen es más
-            que un blog, es mi viaje personal en el mundo del desarrollo web, donde
-            transformo mis desafíos en oportunidades de aprendizaje.
+            ¡Hola! Soy Martín Ferreira, originario de Montevideo, Uruguay.{' '}
+            <span className='font-semibold text-[#2ca9bc]'>CodeZen</span> es más que un
+            blog, es mi viaje personal en el mundo del desarrollo web, donde transformo
+            mis desafíos en oportunidades de aprendizaje.
           </p>
           <p className='text-balance py-4 text-lg'>
             En este espacio, compartiré mis experiencias como programador full stack,
@@ -44,15 +45,10 @@ export default async function AboutPage() {
             para otros desarrolladores que estén en mi misma situación.
           </p>
           <p className='text-balance py-4 text-lg'>
-            Con cada artículo, te invito a sumergirte en un nuevo tema, explorando desde
-            técnicas de codificación hasta conceptos avanzados de desarrollo web. CodeZen
+            <span className='font-semibold text-[#2ca9bc]'>CodeZen </span>
             es un espacio de aprendizaje continuo, donde la pasión por el código se
             encuentra con el deseo de compartir conocimientos y fomentar el crecimiento
             personal y profesional.
-          </p>
-          <p className='text-balance py-4 text-lg'>
-            ¡Bienvenido a CodeZen, donde el conocimiento se encuentra en armonía con la
-            codificación!
           </p>
         </div>
       </div>
