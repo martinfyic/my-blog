@@ -1,7 +1,14 @@
+import { Metadata } from 'next';
 import { posts } from '#site/content';
 import { PostItem } from '@/components/post-item';
 import { QueryPagination } from '@/components/query-pagination';
 import { sortPost } from '@/lib/utils';
+
+export const metadata: Metadata = {
+  title: 'Blog',
+  description:
+    'En esta página encontraras todos mis artículos ordenados del mas reciente al mas antiguo',
+};
 
 const POST_PER_PAGE = 2;
 

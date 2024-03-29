@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 
 import { roboto } from '@/config/fonts';
 import { cn } from '@/lib/utils';
@@ -16,10 +16,16 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: siteConfig.keywords,
-  authors: [{ name: siteConfig.author, url: siteConfig.links.personalSite }],
   creator: siteConfig.author,
   category: 'Blog',
-  publisher: siteConfig.author,
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? siteConfig.url),
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
+  ],
 };
 
 export default function RootLayout({
@@ -36,7 +42,7 @@ export default function RootLayout({
         )}
       >
         <Providers>
-          <div className='min-h-dvh relative flex flex-col bg-background'>
+          <div className='relative flex min-h-dvh flex-col bg-background'>
             <SiteHeader />
             <main className='flex-1'>{children}</main>
           </div>

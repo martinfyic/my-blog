@@ -1,5 +1,11 @@
+import { Metadata } from 'next';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { siteConfig } from '@/config/site';
+
+export const metadata: Metadata = {
+  title: 'Sobre mí',
+  description: 'En esta página encontraras información sobre mí',
+};
 
 export default async function AboutPage() {
   return (
