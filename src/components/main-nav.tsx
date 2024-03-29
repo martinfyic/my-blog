@@ -9,6 +9,7 @@ import { usePathname } from 'next/navigation';
 
 const navLinks = [
   { href: '/blog', label: 'Blog' },
+  { href: '/tags', label: 'Tags' },
   { href: '/sobre-mi', label: 'Sobre mí' },
 ];
 
@@ -27,7 +28,7 @@ export const MainNav = () => {
           href={link.href}
           className={cn(
             'hidden text-sm font-semibold transition-colors hover:text-primary sm:inline-block',
-            pathname === link.href ? 'text-foreground' : 'text-foreground/60'
+            pathname === link.href ? 'text-[#2ca9bc]' : 'text-foreground/60'
           )}
         >
           {link.label}

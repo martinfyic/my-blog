@@ -13,8 +13,8 @@ export default function HomeBlog() {
     <>
       <section className='space-y-6 pb-8 pt-6 md:mt-10 md:pb-12 lg:py-32'>
         <div className='container flex flex-col gap-4 text-center'>
-          <h1 className='text-3xl font-black sm:text-5xl md:text-6xl lg:text-7xl'>
-            Hola! Soy Martín
+          <h1 className='text-3xl font-black sm:text-5xl md:text-6xl lg:text-8xl'>
+            Hola! Soy <span className='text-[#2ca9bc]'>Martín</span>
           </h1>
           <p className='mx-auto max-w-[42rem] text-balance text-muted-foreground sm:text-xl'>
             Bienvenido a mi blog, creado con tailwind, shadcn, velite y Next.js 14. Aquí
@@ -23,7 +23,10 @@ export default function HomeBlog() {
           <div className='flex flex-col justify-center gap-4 sm:flex-row'>
             <Link
               href='/blog'
-              className={cn(buttonVariants({ size: 'lg' }), 'w-full sm:w-fit')}
+              className={cn(
+                buttonVariants({ size: 'lg', className: 'bg-[#2ca9bc]' }),
+                'w-full sm:w-fit'
+              )}
             >
               Ir al blog
             </Link>

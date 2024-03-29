@@ -17,7 +17,7 @@ export const Tag = ({ tag, count, current }: TagProps) => {
       })}
       href={`/tags/${slug(tag)}`}
     >
-      # {tag}
+      # {tag} {count ? `(${count})` : null}
     </Link>
   );
 };

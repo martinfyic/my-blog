@@ -30,6 +30,9 @@ export const MobileNav = () => {
           <MobileLink href='/blog' onOpenChange={setOpen}>
             Blog
           </MobileLink>
+          <MobileLink href='/tags' onOpenChange={setOpen}>
+            Tags
+          </MobileLink>
           <MobileLink href='/sobre-mi' onOpenChange={setOpen}>
             Sobre mí
           </MobileLink>
