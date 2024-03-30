@@ -42,7 +42,7 @@ export const siteConfig = {
     personalSite: 'https://www.martin-ferreira.com/',
   },
   name: 'CodeZen',
-  url: 'https://example.com',
+  url: 'https://codezen-blog.vercel.app/',
 };
 
 export type SiteConfig = typeof siteConfig;
