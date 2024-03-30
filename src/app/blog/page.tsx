@@ -9,7 +9,7 @@ import { Tag } from '@/components/tags';
 export const metadata: Metadata = {
   title: 'Blog',
   description:
-    'En nuestro blog, compartiré desafíos y soluciones en mi trayectoria como programador full stack, con la esperanza de ayudar a otros y demostrar mis conocimientos adquiridos.',
+    'En mi blog, compartiré desafíos y soluciones en mi trayectoria como programador full stack, con la esperanza de ayudar a otros y demostrar mis conocimientos adquiridos.',
 };
 
 const POST_PER_PAGE = 5;
@@ -41,7 +41,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         <div className='flex-1 space-y-4'>
           <h1 className='inline-block text-4xl font-black lg:text-5xl'>Blog</h1>
           <p className='text-xl text-muted-foreground'>
-            En nuestro blog, compartiré desafíos y soluciones en mi trayectoria como
+            En mi blog, compartiré desafíos y soluciones en mi trayectoria como
             programador full stack, con la esperanza de ayudar a otros y demostrar mis
             conocimientos adquiridos.
           </p>
