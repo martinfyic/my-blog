@@ -1,0 +1,108 @@
+---
+title: ¿Qué es Docker?
+description: Docker es una plataforma de software que te permite crear, probar e implementar aplicaciones rápidamente.
+date: 2024-03-31
+tags: ['docker']
+published: true
+---
+
+<Image src='/static/imgs/docker-logo.webp' alt='Logo Docker' width={800} height={300} />
+
+Docker empaqueta software en unidades estandarizadas llamadas contenedores que incluyen todo lo necesario para que el software se ejecute, incluidas bibliotecas, herramientas de sistema, código y tiempo de ejecución. Con Docker, puede implementar y ajustar la escala de aplicaciones rápidamente en cualquier entorno con la certeza de saber que su código se ejecutará.
+
+## Cómo funciona Docker
+
+Docker te proporciona una manera estándar de ejecutar tu código,es un sistema operativo para contenedores.
+
+De manera similar a cómo una máquina virtual virtualiza (elimina la necesidad de administrar directamente) el hardware del servidor, los contenedores virtualizan el sistema operativo de un servidor. Docker se instala en cada servidor y proporciona comandos sencillos que puede utilizar para crear, iniciar o detener contenedores.
+
+## Beneficios
+
+- Cada contenedor esta aislado de los demás.
+- Es posible ejecutar varias instancias de la misma versión o diferentes versiones sin configuraciones adicionales.
+- Con un comando, puedes descargar, levantar y correr todo lo que necesitas.
+- Cada contenedor contiene todo lo que necesitas para ejecutarse.
+- Indiferente el sistema operativo HOST
+
+## Instalación
+
+Esta instalación es para el sistema operativo [Ubuntu](https://docs.docker.com/desktop/install/ubuntu/), documentación para [Windows](https://docs.docker.com/desktop/install/windows-install/) y [Mac](https://docs.docker.com/desktop/install/mac-install/)
+
+### Prerrequisitos
+
+- Tener una versión de 64 bits de la última versión LTS (Ubuntu Jammy Jellyfish 22.04) o de la versión actual que no es LTS (Ubuntu Mantic Minotaur 23.10). Docker Desktop es compatible con la arquitectura x86_64 (o amd64).
+- Para entornos de escritorio que no sean Gnome, se debe instalar `gnome-terminal`:
+  ```bash
+  sudo apt install gnome-terminal
+  ```
+
+### Instalar Docker
+
+1- Configure el repositorio de paquetes de Docker.
+
+```bash
+# Agregue la clave GPG oficial de Docker:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Agregue el repositorio a Apt sources:
+echo \
+"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+$(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+```
+
+2- Instale los paquetes de Docker.
+
+```bash
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+3- Verifique que la instalación de Docker Engine sea exitosa ejecutando la imagen de hello-world.
+
+```bash
+sudo docker run hello-world
+```
+
+Este comando descarga una imagen de prueba y la ejecuta en un contenedor. Cuando el contenedor se ejecuta, imprime un mensaje de confirmación y sale.
+
+<Callout>
+  El grupo de usuarios de Docker existe pero no contiene usuarios, por lo que es necesario
+  utilizar sudo para ejecutar comandos de Docker. Continúe con la
+  [postinstalación](https://docs.docker.com/engine/install/linux-postinstall/) de Linux
+  para permitir que los usuarios sin privilegios ejecuten comandos de Docker y para otros
+  pasos de configuración opcionales.
+</Callout>
+
+En este punto ya tenemos docker instalado, adicionalmente podemos instalar **Docker Desktop** que nos brindara una interfaz grafica para poder manejar nuestras imagenes y contendedores, entre otras cosas, sin tener que usar la terminal.
+
+### Instalar Docker Desktop
+
+1- Descargamos el DEB package, se nos descargara un archivo `docker-desktop-4.28.0-amd64.deb`.
+
+2- Nos dirigimos a la carpeta donde se descargo, ejemplo Descargas y ejecutamos el siguiente comando:
+
+```bash
+sudo apt update && sudo apt upgrade
+sudo dpkg -i docker-desktop-4.28.0-amd64.deb
+```
+
+Primero actualizaremos los repositorios y luego instalaremos el archivo descargado.
+
+## Tutorial
+
+Luego que tengamos todo instalado, la gente de docker nos brinda un tutorial, el cual es recomendable hacer en nuestros primeros pasos.
+
+Para poder hacerlo simplemente ejecutamos el comando:
+
+```bash
+docker container run -d -p 80:80 docker/getting-started
+```
+
+Una vez ejecutado el comando nos dirigimos al [localhost](http://localhost), donde podremos realizar este tutorial.
+
+Espero que este artículo haya sido de tu agrado.
