@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   creator: siteConfig.author,
   category: 'Blog',
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? siteConfig.url),
+  verification: {
+    google: 'fSFBPnB9Ml3REmqIhpkLo5oI3mBegEWXLMjB78LEHGs',
+  },
 };
 
 export const viewport: Viewport = {
