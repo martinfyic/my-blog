@@ -45,7 +45,7 @@ export default function TagPage({ params }: TagPageProps) {
             {title}
           </h1>
           <p className='text-xl text-muted-foreground'>
-            Descripción del blog, de que temas tratara, etc
+            Aquí encontraras todos los artículos relacionados con {title}.
           </p>
         </div>
       </div>
