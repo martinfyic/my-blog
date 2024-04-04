@@ -2,6 +2,7 @@ import * as runtime from 'react/jsx-runtime';
 import Image from 'next/image';
 import { Callout } from './callout';
 import { Iframe } from './iframe';
+import { ContentHero } from './content-hero';
 
 const useMDXComponent = (code: string) => {
   const fn = new Function(code);
@@ -12,6 +13,7 @@ const component = {
   Image,
   Callout,
   Iframe,
+  ContentHero,
 };
 
 interface MdxProps {
