@@ -1,0 +1,75 @@
+---
+title: 'Dominando Docker: Los 5 Comandos Esenciales para Principiantes'
+description: Si eres nuevo en el mundo del desarrollo web o simplemente estás explorando nuevas tecnologías, es probable que hayas escuchado hablar de Docker.
+date: 2024-04-04
+tags: ['docker']
+published: true
+---
+
+<ContentHero
+  src='/imgs/docker-comandos.webp'
+  alt='Logo Docker'
+  url='https://www.docker.com/'
+/>
+
+Docker es una plataforma que facilita la creación, el despliegue y la ejecución de aplicaciones utilizando contenedores. Estos contenedores permiten empaquetar una aplicación con todas sus dependencias en una unidad estandarizada, garantizando así que se ejecute de manera consistente en cualquier entorno.
+
+Para comenzar con Docker, es esencial comprender algunos comandos básicos que te permitirán interactuar con los contenedores de manera efectiva. En este artículo, vamos a explorar los cinco comandos esenciales que todo principiante en Docker debería conocer.
+
+## 1. `docker run`
+
+El comando `docker run` es fundamental para iniciar un contenedor a partir de una imagen específica. Por ejemplo, si deseas ejecutar un contenedor basado en la imagen de Ubuntu, puedes utilizar el siguiente comando:
+
+```bash
+docker run ubuntu
+```
+
+Este comando buscará la imagen de Ubuntu en tu sistema. Si la imagen no está disponible localmente, Docker la descargará automáticamente desde el repositorio público de Docker Hub. Una vez descargada la imagen, Docker creará y ejecutará un contenedor basado en esa imagen.
+
+## 2. `docker ps`
+
+El comando `docker ps` se utiliza para listar todos los contenedores en ejecución en tu sistema. Esto te proporciona una visión general rápida de los contenedores activos, junto con información relevante como el ID del contenedor, el nombre, el estado, los puertos expuestos, etc.
+
+```bash
+docker ps
+```
+
+## 3. `docker stop`
+
+Cuando ya no necesites un contenedor en ejecución, puedes detenerlo utilizando el comando `docker stop`, seguido del ID o el nombre del contenedor.
+
+```bash
+docker stop <container_id ó container_name>
+```
+
+Este comando detendrá el contenedor de manera segura, lo que significa que el proceso dentro del contenedor se detendrá y los recursos asociados con él serán liberados.
+
+## 4. `docker rm`
+
+El comando `docker rm` se utiliza para eliminar uno o más contenedores que ya no necesitas. Al igual que con `docker stop`, puedes especificar el ID o el nombre del contenedor que deseas eliminar.
+
+```bash
+docker rm <container_id ó container_name>
+```
+
+Es importante destacar que solo puedes eliminar contenedores que estén detenidos. Si intentas eliminar un contenedor en ejecución, Docker te mostrará un mensaje de error.
+
+## 5. `docker pull`
+
+El comando `docker pull` se utiliza para descargar imágenes de contenedor desde un repositorio remoto, como Docker Hub, a tu sistema local. Esto es útil cuando necesitas una imagen específica que aún no está disponible en tu sistema.
+
+```bash
+docker pull <image_name>
+```
+
+Por ejemplo, si deseas descargar la última imagen de Ubuntu desde Docker Hub, puedes usar el siguiente comando:
+
+```bash
+docker pull ubuntu
+```
+
+Una vez que la imagen se haya descargado, estará disponible localmente en tu sistema y podrás utilizarla para crear nuevos contenedores.
+
+Estos cinco comandos básicos de Docker son solo el punto de partida.
+
+¡Espero que encuentres útil este artículo! Si tienes alguna pregunta o necesitas más información sobre Docker u otros temas relacionados con el desarrollo web, no dudes en preguntar.
