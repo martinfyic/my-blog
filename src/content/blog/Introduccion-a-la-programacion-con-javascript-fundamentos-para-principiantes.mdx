@@ -1,0 +1,136 @@
+---
+title: 'Introducción a la Programación con JavaScript: Fundamentos para Principiantes'
+description: JavaScript es un lenguaje de programación ampliamente utilizado en el desarrollo web. Es fundamental para crear interactividad en sitios web y aplicaciones web modernas.
+date: 2024-04-11
+tags: ['javascript']
+published: true
+---
+
+## Variables y Tipos de Datos
+
+En JavaScript, puedes almacenar información en variables. Una variable es un contenedor para guardar datos. Para declarar una variable en JavaScript, utiliza la palabra clave let o const seguida por el nombre de la variable.
+
+```javascript
+// Declaración de variables
+const nombre = 'Juan';
+let edad = 30;
+```
+
+En el ejemplo anterior, nombre es una variable constante que almacena una cadena de texto (string) y edad es una variable que almacena un número entero (number).
+
+### Tipos de Datos en JavaScript
+
+JavaScript es un lenguaje de tipado dinámico, lo que significa que las variables pueden contener diferentes tipos de datos en diferentes momentos.
+
+Los tipos de datos más comunes en JavaScript son:
+
+- Números (number): Enteros o decimales. Ejemplo: let edad = 22;
+- Cadenas de Texto (string): Secuencias de caracteres. Ejemplo: let nombre = "Ana";
+- Booleanos (boolean): Valores verdadero (true) o falso (false). Ejemplo: let esMayor = true;
+- Arreglos (array): Listas ordenadas de elementos. Ejemplo: let colores = ["rojo", "verde", "azul"];
+- Objetos (object): Colecciones de pares clave-valor. Ejemplo:
+
+```javascript
+let persona = {
+  nombre: 'Carlos',
+  edad: 25,
+  esEstudiante: true,
+};
+```
+
+## Operadores Básicos
+
+Los operadores te permiten realizar operaciones sobre variables y valores. Algunos operadores básicos en JavaScript son:
+
+- Aritméticos: + (suma), - (resta), \* (multiplicación), / (división).
+- Comparación: === (igual a), != (no igual a), > (mayor que), < (menor que).
+- Lógicos: && (y), || (o), ! (negación).
+
+```javascript
+let x = 10;
+let y = 5;
+
+// Operaciones aritméticas
+let suma = x + y; // 15
+let resta = x - y; // 5
+let multiplicacion = x * y; // 50
+let division = x / y; // 2
+
+// Operaciones de comparación
+console.log(x > y); // true
+console.log(x === y); // false
+
+// Operaciones lógicas
+let esMayorDeEdad = true;
+let tieneLicencia = false;
+
+let puedeConducir = esMayorDeEdad && tieneLicencia; // false
+```
+
+## Condicionales y Bucles
+
+Los condicionales (if-else) y los bucles (for, while) son estructuras fundamentales para controlar el flujo de ejecución en JavaScript.
+
+Condicionales (if-else)
+
+```javascript
+let edad = 18;
+
+if (edad >= 18) {
+  console.log('Eres mayor de edad.');
+} else {
+  console.log('Eres menor de edad.');
+}
+```
+
+Para los (if-else) podemos usar los operadores ternarios
+
+```javascript
+let edad = 18;
+
+const validarEdad = edad >= 18 ? 'Eres mayor de edad.' : 'Eres menor de edad.';
+
+console.log(validarEdad); // Eres mayor de edad.
+```
+
+Bucles (for)
+
+```javascript
+for (let i = 1; i <= 5; i++) {
+  console.log('Número: ' + i);
+}
+```
+
+## Funciones
+
+Las funciones son bloques de código reutilizable que realizan una tarea específica. Puedes definir una función utilizando la palabra clave function.
+
+```javascript
+// Definición de una función
+function saludar(nombre) {
+  console.log('¡Hola, ' + nombre + '!');
+}
+
+// Llamada a la función
+saludar('María'); // Output: ¡Hola, María!
+```
+
+También existen las funciones flechas (arrow function) que es una forma mas agradable de escribir, ademas de que nos facilita poder escribir código en una sola linea
+
+```javascript
+// Definición de una funciones flecha
+
+const saludar = (nombre) => {
+  console.log('¡Hola, ' + nombre + '!');
+};
+
+// misma función en una linea
+const saludar = (nombre) => console.log('¡Hola, ' + nombre + '!');
+
+// Llamada a la función
+saludar('María'); // Output: ¡Hola, María!
+```
+
+## Conclusiones
+
+Este artículo ha cubierto algunos conceptos básicos de programación en JavaScript, incluyendo variables, tipos de datos, operadores, condicionales, bucles y funciones. ¡Esperamos que esta introducción te ayude a dar tus primeros pasos en el fascinante mundo de la programación!
