@@ -1,11 +1,12 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 import { Icons } from './icons';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
-import { usePathname } from 'next/navigation';
+import { TransitionLink } from './transition-link';
 
 const navLinks = [
   { href: '/blog', label: 'Blog' },
@@ -23,7 +24,7 @@ export const MainNav = () => {
         <span className='font-bold'>{siteConfig.name}</span>
       </Link>
       {navLinks.map((link) => (
-        <Link
+        <TransitionLink
           key={link.href}
           href={link.href}
           className={cn(
@@ -32,7 +33,7 @@ export const MainNav = () => {
           )}
         >
           {link.label}
-        </Link>
+        </TransitionLink>
       ))}
     </nav>
   );

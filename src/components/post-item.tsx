@@ -1,9 +1,8 @@
-import Link from 'next/link';
-
 import { Calendar } from 'lucide-react';
 import { cn, formatDate } from '@/lib/utils';
 import { buttonVariants } from './ui/button';
 import { Tag } from './tags';
+import { TransitionLink } from './transition-link';
 
 interface PostItemProps {
   date: string;
@@ -18,7 +17,7 @@ export const PostItem = ({ date, slug, title, description, tags }: PostItemProps
     <article className='flex flex-col gap-2 border-b border-border py-3'>
       <div className=''>
         <h2 className='text-2xl font-bold'>
-          <Link href={'/' + slug}>{title}</Link>
+          <TransitionLink href={'/' + slug}>{title}</TransitionLink>
         </h2>
       </div>
       <div className='flex gap-2'>{tags?.map((tag) => <Tag key={tag} tag={tag} />)}</div>
@@ -31,12 +30,12 @@ export const PostItem = ({ date, slug, title, description, tags }: PostItemProps
             <time dateTime={date}>{formatDate(date)}</time>
           </dd>
         </dl>
-        <Link
+        <TransitionLink
           href={'/' + slug}
           className={cn(buttonVariants({ variant: 'link' }), 'py-0')}
         >
           Leer más →
-        </Link>
+        </TransitionLink>
       </div>
     </article>
   );

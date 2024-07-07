@@ -6,6 +6,7 @@ import { siteConfig } from '@/config/site';
 import { cn, sortPost } from '@/lib/utils';
 import { posts } from '#site/content';
 import { PostItem } from '@/components/post-item';
+import { TransitionLink } from '@/components/transition-link';
 
 export default function HomeBlog() {
   const latestPosts = sortPost(posts).slice(0, 3);
@@ -21,7 +22,7 @@ export default function HomeBlog() {
             encontrarás artículos sobre desarrollo web y tecnologías 🚀.
           </p>
           <div className='flex flex-col justify-center gap-4 sm:flex-row'>
-            <Link
+            <TransitionLink
               href='/blog'
               className={cn(
                 buttonVariants({ size: 'lg', className: 'bg-[#2ca9bc]' }),
@@ -29,7 +30,7 @@ export default function HomeBlog() {
               )}
             >
               Ir al blog
-            </Link>
+            </TransitionLink>
             <Link
               href={siteConfig.links.github}
               target='_blank'

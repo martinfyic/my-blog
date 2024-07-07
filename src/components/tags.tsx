@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import { slug } from 'github-slugger';
 import { badgeVariants } from './ui/badge';
+import { TransitionLink } from './transition-link';
 
 interface TagProps {
   tag: string;
@@ -10,7 +10,7 @@ interface TagProps {
 
 export const Tag = ({ tag, count, current }: TagProps) => {
   return (
-    <Link
+    <TransitionLink
       className={badgeVariants({
         variant: current ? 'default' : 'secondary',
         className: 'rounded-md no-underline',
@@ -18,6 +18,6 @@ export const Tag = ({ tag, count, current }: TagProps) => {
       href={`/tags/${slug(tag)}`}
     >
       # {tag} {count ? `(${count})` : null}
-    </Link>
+    </TransitionLink>
   );
 };
