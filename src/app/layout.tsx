@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import type { Metadata, Viewport } from 'next';
+import { Analytics } from '@vercel/analytics/react';
 
 import { roboto } from '@/config/fonts';
 import { cn } from '@/lib/utils';
@@ -49,6 +50,7 @@ export default function RootLayout({
           <div className='relative flex min-h-dvh flex-col bg-background'>
             <SiteHeader />
             <main className='flex-1'>{children}</main>
+            <Analytics />
             <SiteFooter />
           </div>
         </Providers>
